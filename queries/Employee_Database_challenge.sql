@@ -1,4 +1,6 @@
 -- CHALLENGE ASSIGNMENT
+
+-- Deliverable 1:
 -- Create a table of retirement titles
 SELECT e.emp_no,
 		e.first_name,
@@ -29,3 +31,27 @@ INTO retiring_titles
 FROM unique_titles as uts
 GROUP BY uts.title 
 ORDER BY COUNT DESC;
+
+-- Deliverable 2:
+-- Create a mentorship eligibility table
+SELECT DISTINCT ON (emp_no)
+					e.emp_no,
+					e.first_name,
+					e.last_name,
+					e.birth_date,
+					de.from_date,
+					de.to_date,
+					ts.title
+INTO mentorship_eligibility
+FROM employees as e
+INNER JOIN dept_emp as de
+	ON (e.emp_no = de.emp_no)
+INNER JOIN titles as ts
+	ON (e.emp_no = ts.emp_no)
+WHERE (de.to_date = '9999-01-01')
+	AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+ORDER BY e.emp_no, ts.from_date DESC;
+	
+
+
+
