@@ -43,7 +43,7 @@ Using this ERD, we know exactly which files to draw the desired information from
 
 * If internal promotion is the focus to fill Senior-level positions at PH, then it may make more sense to keep some of these retirement-eligible employees as part-time mentors for current Engineers and Staff. This will reduce the amount of time and resources that go into training new employees. PH refers to this as their Mentorship Program. 
     
-    To identify current employees eligbile to be mentors, we extracted employess born in 1965 and created table containing the employee's number, first and last name, from date (date that they were hired for or promoted into the position) and title. 
+    To identify current employees eligbile to be mentors, we extracted employess born in 1965 and created a table containing the employee's number, first and last name, from date (date that they were hired for or promoted into the position) and title. 
 
     ![Mentorship Eligibility](images/mentorship_eligibility.png)
 
