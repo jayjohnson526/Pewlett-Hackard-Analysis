@@ -10,10 +10,11 @@ Currently, PH uses excel files to keep track of employees and departments, but t
 2.  How many positions will PH need to fill?
 
 
+
 ## Results
 In order to build a database from the existing files, we first created an entity relationship diagram (ERD) to identify the links that exist between each file:
 
-![](images/EmpolyeeDB.png)
+![](images/EmployeeDB.png)
  
 Using this ERD, we know exactly which files to draw the desired information from, and how it can be joined together to answer our specific questions. 
 
@@ -21,31 +22,32 @@ Using this ERD, we know exactly which files to draw the desired information from
 
 * We first extracted a list of employees born between 1952 and 1955, knowing that these employees are nearing retirement age and qualify for retirement packages. We also included their corresponding titles so that we can later quantify the number of anticipated vacancies by title, allowing human resources to begin an informed and targeted recruitment search. 
 
-![Retirement Titles](images/retirement_titles.png)
+    ![Retirement Titles](images/retirement_titles.png)
 
 * The issue with the above table is that some employees changed titles (either from promotion or from changing departments), meaning that their name will show up more than once. This will end up overestimating the number of employees planning to retire. To resolve this issue, we next generated a new table with filtered results to show only the most recent title of the retirement-eligible employee. 
 
-![Unique Titles](images/unique_titles.png)
+    ![Unique Titles](images/unique_titles.png)
 
-Here, we can see that each employee shows up only once, ensuring that our estimate of retiring employees is accurate. 
+    Here, we can see that each employee shows up only once, ensuring that our estimate of retiring employees is accurate. 
 
 
 * Next, we used our table of unique titles to quantify the number of expected vacanies by title. This table is especially informative because it will inform PH where to target their hiring search, and how many people for each position will need to be hired. 
 
-![Retiring Titles](images/retiring_titles.png)
+    ![Retiring Titles](images/retiring_titles.png)
 
-We can see from this table that most retirement-eligible employees are Senior Engineers and Senior Staff, followed next by Engineers and Staff, then by Technique Leaders and Assistant Engineers, and lastly by Managers. PH can either decide to look externally for Senior Eningeers and Senior Staff, or focus on promoting current Engineers and Staff so that the bulk of the hiring is targeted toward recruiting mid and entry level Engineers and Staff. 
+    We can see from this table that most retirement-eligible employees are Senior Engineers and Senior Staff, followed next by Engineers and Staff, then by Technique Leaders and Assistant Engineers, and lastly by Managers. PH can either decide to look externally for Senior Eningeers and Senior Staff, or focus on promoting current Engineers and Staff so that the bulk of the hiring is targeted toward recruiting mid and entry level Engineers and Staff. 
+
 
 
 ### 2. The Employees Eligible for the Mentoship Program
 
 * If internal promotion is the focus to fill Senior-level positions at PH, then it may make more sense to keep some of these retirement-eligible employees as part-time mentors for current Engineers and Staff. This will reduce the amount of time and resources that go into training new employees. PH refers to this as their Mentorship Program. 
     
-To identify current employees eligbile to be mentors, we extracted employess born in 1965 and created table containing the employee's number, first and last name, from date (date that they were hired for or promoted into the position) and title. 
+    To identify current employees eligbile to be mentors, we extracted employess born in 1965 and created table containing the employee's number, first and last name, from date (date that they were hired for or promoted into the position) and title. 
 
-![Mentorship Eligibility](images/mentorship_eligibility.png)
+    ![Mentorship Eligibility](images/mentorship_eligibility.png)
 
-PH can use this information to identify staff members that are nearing retirement, and reach out to them to gauge their interest in mentoring new and current employees. 
+    PH can use this information to identify staff members that are nearing retirement, and reach out to them to gauge their interest in mentoring new and current employees. 
 
 ## Summary
 
